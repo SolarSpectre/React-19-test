@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { Form } from './components/form';
+import {preload} from 'react-dom'
+import { Logo } from './components/logo';
 
 function Seo (title = 'React 19', description='Hola React 19'){
   return(
@@ -26,6 +28,12 @@ function App() {
   //   document.title = `Hola React ${count}`
   // }, [count])
   const [show, setShow] = useState(false)
+  //preload 
+  preload("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css", {as: 'style',
+    priority: 'low'
+})
+  preload('https://react.dev/images/uwu.png', {as: 'image' })
+
   return (
     <>
       {/* NEW*/}
@@ -35,7 +43,7 @@ function App() {
       <link rel="icon" type="image/svg+xml" href="./assets/react.svg" />
       <AnotherComponent/>
       <div>    
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          <Logo/>
           <h3 style={{marginBottom:0}}>Hola React 19</h3>
           <small style={{color: 'yellow', fontSize:'10px'}}>La version es {React.version}</small>
       </div>
