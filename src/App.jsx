@@ -27,7 +27,6 @@ function App() {
   // useEffect( () => {
   //   document.title = `Hola React ${count}`
   // }, [count])
-  const [show, setShow] = useState(false)
   //preload 
   preload("https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css", {as: 'style',
     priority: 'low'
@@ -47,8 +46,7 @@ function App() {
           <h3 style={{marginBottom:0}}>Hola React 19</h3>
           <small style={{color: 'yellow', fontSize:'10px'}}>La version es {React.version}</small>
       </div>
-        <button onClick={() => setShow(!show)}>Toggle</button>
-        {show && <Form/>}
+      <Form/>
     </>
   )
 }
